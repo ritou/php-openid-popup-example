@@ -13,7 +13,9 @@ session_start();
   <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.7.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
   <script type="text/javascript" src="popupmanager.js"></script>
 
+<!--
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.7.0/build/reset-fonts-grids/reset-fonts-grids.css&2.7.0/build/base/base-min.css">
+-->
   </head>
   <body>
     <h1>OpenID Pop-up Example</h1>
@@ -27,14 +29,14 @@ if( $_SESSION['openid'] ){
 }
 ?>
     <div>
-        <a id="loginLink_google" href="./try_auth.php?action=verify&openid_identifier=google.com/accounts/o8/id"><img src="https://www.google.com/favicon.ico" border=0>Sign In with Google Account</a>
+        <a id="loginLink_google" href="./try_auth.php?action=verify&openid_identifier=google.com/accounts/o8/id"><img src="https://www.google.com/favicon.ico" width="16" height="16" border=0>Sign In with Google Account</a>
         <a href="https://www.google.com/accounts/IssuedAuthSubTokens" target="_brank">Disable Sign In Status</a>
     </div>
     <div>
-        <a id="loginLink_myspace" href="./try_auth.php?action=verify&openid_identifier=myspace.com"><img src="http://developer.myspace.com/Community/favicon.ico" border=0>Sign In with MySpaceID</a>
+        <a id="loginLink_myspace" href="./try_auth.php?action=verify&openid_identifier=myspace.com"><img src="http://developer.myspace.com/Community/favicon.ico" width="16" height="16" border=0>Sign In with MySpaceID</a>
     </div>
     <div>
-        <a id="loginLink_yahoo" href="./try_auth.php?action=verify&openid_identifier=yahoo.com"><img src="http://www.yahoo.com/favicon.ico" border=0>Sign In with Yahoo!ID</a>
+        <a id="loginLink_yahoo" href="./try_auth.php?action=verify&openid_identifier=yahoo.com"><img src="http://www.yahoo.com/favicon.ico" width="16" height="16" border=0>Sign In with Yahoo!ID</a>
     </div>
 
 <!-- TEST Code -->
