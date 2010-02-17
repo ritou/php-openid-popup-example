@@ -71,7 +71,7 @@ function getScheme() {
 }
 
 function getReturnTo() {
-    return sprintf("%s://%s%s/finish_auth.php",
+    return sprintf("%s://%s%s/finish_auth.php?",
                    getScheme(), $_SERVER['SERVER_NAME'],
                    dirname($_SERVER['PHP_SELF']));
 }
