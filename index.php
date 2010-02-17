@@ -101,6 +101,9 @@ session_start();
   </head>
   <body>
     <h1>OpenID Pop-up Example</h1>
+
+    <p>You can see the details of this code at <a href="http://github.com/ritou/php-openid-popup-example" target="_blank">github.com</a>.</p>
+
 <?php
 if( $_SESSION['openid'] ){
 ?>            
