@@ -26,6 +26,11 @@ function doIncludes() {
     require_once "Auth/OpenID/FileStore.php";
 
     /**
+     * Require the AZ extension module.
+     */
+    require_once "Auth/OpenID/AX.php";
+
+    /**
      * Require the UI extension module.
      */
     require_once "Auth/OpenID/UI.php";

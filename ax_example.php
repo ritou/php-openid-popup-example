@@ -20,13 +20,13 @@ session_start();
   });
   </script>
   <!-- /jQuery Popupwindow js include -->
-<style type="text/css">
-.round{
-	background:whitesmoke;
-	padding:10px;
-	width:750px;
-}
-</style>
+  <style type="text/css">
+  .round{
+  background:whitesmoke;
+  padding:10px;
+  width:750px;
+  }
+  </style>
   </head>
   <body>
     <h1>OpenID Pop-up and AX Example</h1>
