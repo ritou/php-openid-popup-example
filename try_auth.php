@@ -28,45 +28,24 @@ function run() {
         displayError("Authentication error; not a valid OpenID.");
     }
 
+    // add AX request
     if( $_GET['ax'] == 'true'){
         $ax_request = new Auth_OpenID_AX_FetchRequest();
 
-        // set nickname request
-        if( $_GET['ax_nickname'] == 'true' ){
-            $ax_request->add(new Auth_OpenID_AX_AttrInfo('http://axschema.org/namePerson/friendly',1,true,'nickname'));
+        global $ax_data;
+        foreach( $ax_data as $ax_key => $ax_data_ns){
+            // set AX params
+            if( $_GET['ax_'.$ax_key] == 'true' ){
+                $ax_request->add(new Auth_OpenID_AX_AttrInfo($ax_data_ns,1,true,$ax_key));
+            }
         }
-
-        // set profile img request
-        if( $_GET['ax_profile_img'] == 'true' ){
-            $ax_request->add(new Auth_OpenID_AX_AttrInfo('http://axschema.org/media/image/default',1,true,'profile_img'));
-        }
-
-        // set gender request
-        if( $_GET['ax_gender'] == 'true' ){
-            $ax_request->add(new Auth_OpenID_AX_AttrInfo('http://axschema.org/person/gender',1,true,'gender'));
-        }
-
-        // set birth year request
-        if( $_GET['ax_birthyear'] == 'true' ){
-            $ax_request->add(new Auth_OpenID_AX_AttrInfo('http://axschema.org/birthDate/birthYear',1,true,'byear'));
-        }
-
-        // set first name request
-        if( $_GET['ax_firstname'] == 'true' ){
-            $ax_request->add(new Auth_OpenID_AX_AttrInfo('http://axschema.org/namePerson/first',1,true,'first'));
-        }
-
-        // set last name request
-        if( $_GET['ax_lastname'] == 'true' ){
-            $ax_request->add(new Auth_OpenID_AX_AttrInfo('http://axschema.org/namePerson/last',1,true,'last'));
-        }
-
         // add extension
         if( $ax_request ){
             $auth_request->addExtension($ax_request);
         }
     }
 
+    // add UI extension request
     if( $_GET['ui'] == 'true'){
         $UI_request = new OpenID_UI_Request();
 

@@ -29,6 +29,7 @@ function doIncludes() {
      * Require the AZ extension module.
      */
     require_once "Auth/OpenID/AX.php";
+    require_once "ax_datatable.php";
 
     /**
      * Require the UI extension module.

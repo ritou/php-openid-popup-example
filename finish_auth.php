@@ -49,24 +49,11 @@ function run() {
         // AX Process
         $ax_resp = Auth_OpenID_AX_FetchResponse::fromSuccessResponse($response);
         if( $ax_resp ){
-            if( $ax_resp->data["http://axschema.org/namePerson/friendly"][0] ){
-                $_SESSION['ax_nickname'] = $ax_resp->data["http://axschema.org/namePerson/friendly"][0];
-            }
-
-            if( $ax_resp->data["http://axschema.org/media/image/default"][0] ){
-                $_SESSION['ax_profile_url'] = $ax_resp->data["http://axschema.org/media/image/default"][0];
-            }
-            if( $ax_resp->data["http://axschema.org/person/gender"][0] ){
-                $_SESSION['ax_gender'] = $ax_resp->data["http://axschema.org/person/gender"][0];
-            }
-            if( $ax_resp->data["http://axschema.org/birthDate/birthYear"][0] ){
-                $_SESSION['ax_birthyear'] = $ax_resp->data["http://axschema.org/birthDate/birthYear"][0];
-            }
-            if( $ax_resp->data["http://axschema.org/namePerson/first"][0] ){
-                $_SESSION['ax_firstname'] = $ax_resp->data["http://axschema.org/namePerson/first"][0];
-            }
-            if( $ax_resp->data["http://axschema.org/namePerson/last"][0] ){
-                $_SESSION['ax_lastname'] = $ax_resp->data["http://axschema.org/namePerson/last"][0];
+            global $ax_data;
+            foreach( $ax_data as $ax_key => $ax_data_ns){
+                if( $ax_resp->data[$ax_data_ns][0] ){
+                    $_SESSION['ax_'.$ax_key] = $ax_resp->data[$ax_data_ns][0];
+                }
             }
         }
 

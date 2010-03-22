@@ -53,8 +53,8 @@
 
     yahoojp:
     {
-      height:530,
-      width:530,
+      height:560,
+      width:540,
       toolbar:1,
       scrollbars:1,
       status:1,       

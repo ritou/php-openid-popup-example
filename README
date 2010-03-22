@@ -1,0 +1,12 @@
+php-openid-popup-example
+
+This is sample codes for demonstrate OpenID Auth Process using UI extension and AX extension.
+
+COPYRIGHT AND LICENCE
+ 
+Put the correct copyright and licence information here.
+ 
+Copyright (C) 2010 by ritou
+ 
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself
