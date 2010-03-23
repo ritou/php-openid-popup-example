@@ -59,8 +59,11 @@ function run() {
 
     }
 
-    //include 'index.php';
-    include 'close.php';
+	if($_GET["popup"] == "true"){
+        include 'close.php';
+	}else{
+        include 'index.php';
+	}
 }
 
 run();

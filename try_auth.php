@@ -62,7 +62,7 @@ function run() {
         // set popup
         if( $_GET['popup'] == 'true' ){
             $UI_request->setPopup();
-            $return_to .= "?popup=true";
+            $return_to .= "popup=true";
         }
 
         $auth_request->addExtension($UI_request);
