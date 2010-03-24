@@ -62,7 +62,11 @@ function run() {
 	if($_GET["popup"] == "true"){
         include 'close.php';
 	}else{
-        include 'index.php';
+        if( $_GET["callback"] == "ax" ){
+            header("Location: ./ax_example.php");
+		}else{
+            header("Location: ./index.php");
+		}
 	}
 }
 

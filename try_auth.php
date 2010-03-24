@@ -63,9 +63,13 @@ function run() {
         if( $_GET['popup'] == 'true' ){
             $UI_request->setPopup();
             $return_to .= "popup=true";
-        }
+		}
 
         $auth_request->addExtension($UI_request);
+	}else{
+        if($_GET['callback'] == "ax"){
+            $return_to .= "callback=ax";
+        }
 	}
     $redirect_url = $auth_request->redirectURL( getTrustRoot(), $return_to );
 

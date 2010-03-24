@@ -33,6 +33,14 @@ session_start();
 
     <p>You can see the details of this code at <a href="http://github.com/ritou/php-openid-popup-example" target="_blank">github.com</a>.</p>
 
+    <h2>AX Example</h2>
+    <div>
+        <a href="./try_auth.php?callback=ax&action=verify&openid_identifier=yahoo.co.jp&ax=true&ax_nickname=true&ax_profile_img=true&ax_gender=true&ax_birthyear=true&ax_firstname=true&ax_lastname=true">
+        <img src="http://i.yimg.jp/images/login/btn/btnXSLogin.gif" width="116" height="28"alt="Yahoo! JAPAN IDでログイン" border="0">
+        </a>
+    </div>
+
+    <h2>AX + popup Example</h2>
     <!-- jQuery Popupwindow example -->
     <div>
         <a class="popupwindow" rel="google" href="./try_auth.php?action=verify&openid_identifier=google.com/accounts/o8/id&ui=true&popup=true&ax=true&ax_country=true&ax_email=true&ax_firstname=true&ax_language=true&ax_lastname=true"><img src="http://www.google.com/favicon.ico" width="16" height="16" border=0>Sign In with Google Account</a>
@@ -51,7 +59,6 @@ session_start();
     <!--
 	-->
     <!-- /jQuery Popupwindow example -->
-
     <div>
         <p>&nbsp;</p>
     </div>
@@ -67,9 +74,15 @@ if( $_SESSION['openid'] ){
     global $ax_data;
     foreach( $ax_data as $ax_key => $ax_data_ns){
         if( $_SESSION['ax_'.$ax_key] ){
+            if( $ax_key == "profile_img" ){
+?>
+        <p><?php echo $ax_key;?> : <img src="<?php echo $_SESSION['ax_'.$ax_key]; ?>"></p>
+<?php
+            }else{
 ?>
         <p><?php echo $ax_key;?> : <?php echo $_SESSION['ax_'.$ax_key]; ?></p>
 <?php
+            }
         }
     }
 ?>
@@ -78,5 +91,5 @@ if( $_SESSION['openid'] ){
 <?php
 }
 ?>
-  </body>
+</body>
 </html>
